@@ -16,8 +16,8 @@ app.use(cors());
 const emailTransporter = nodemailer.createTransport({
     service: 'Gmail', 
     auth: {
-      user: 'me.nasimkt@gmail.com', // Sender email address
-      pass: 'crzaxyvgtuwuetbl',    // Sender email password
+      user: '', // Sender email address
+      pass: '',    // Sender email password
     },
   });
 
@@ -35,7 +35,7 @@ app.post('/sendEmailOTP', async (req, res) => {
   emailOtpMap.set(email, otp);
 
   const mailOptions = {
-    from: 'me.nasimkt@gmail.com', // Sender email address
+    from: '', // Sender email address
     to: email,
     subject: 'Your OTP for Login',
     text: `Your OTP is: ${otp}`,
@@ -65,7 +65,7 @@ app.post('/verifyEmailOTP', (req, res) => {
 
 // Phone verification
 
-const twilioClient = twilio('AC640cad353854b29d2df0d7c9031b5b8a', '6b869835ea0238da0d4bcba413ff1900');
+const twilioClient = twilio('twilio sid', 'auth token');
 
 const phoneOtpMap = new Map();
 
@@ -82,7 +82,7 @@ app.post('/sendPhoneOTP', async (req, res) => {
   try {
     await twilioClient.messages.create({
         body: `Your OTP is: ${otp}`,
-        from: '+12562978668',
+        from: 'twilio number',
         to: phoneNumber,
       });
 
