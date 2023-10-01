@@ -6,53 +6,71 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(to bottom right, #ff8c00, #ff2c84);
+  background-image: url("https://th.bing.com/th/id/OIP.pWAz6MVBo5svuJ09ahjN7gHaEK?w=281&h=180&c=7&r=0&o=5&pid=1.7");
 }
 
 .App {
+  width: 600px;
   text-align: center;
-  background-color: white;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  background-color: #ffffff; /* Change the background color */
+  padding: 25px; /* Adjust padding */
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: flex; /* Arrange form in landscape */
+  flex-direction: row; /* Landscape layout */
+  justify-content: space-around; /* Center form horizontally */
+  align-items: center; /* Center form vertically */
 }
 
 h1 {
-  font-size: 24px;
-  text-align: center;
+  font-family: monospace;
+  font-size: 25px;
+  text-align: left;
   margin-bottom: 20px;
+  padding-right: 25px;
+  color: #000000; /* Change text color */
 }
 
 .registration-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  text-align: left; /* Align form contents to the left */
 }
 
 input[type="text"],
 input[type="email"],
 input[type="tel"],
-input[type="date"] {
+input[type="date"],
+input[type="password"] {
   width: 100%;
   padding: 10px;
-  margin: 5px 0;
+  margin: 10px 0; /* Adjust margin */
+  background-color: #d8d2d2; /* Change input background color */
+  color: #000000; /* Change input text color */
   border: none;
-  border-bottom: 1px solid #ccc;
+  border-radius: 5px;
   outline: none;
+  font-size: large;
 }
 
 button {
-  background-color: #ff2c84;
+  background-color: #3f68c0;
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
+  
 }
+/* Add this to your CSS */
+.submit-button-container {
+  
+  color: #ff0000;
+  border-radius: 12px;
+  display: flex;
+  justify-content: flex-end; /* Align button to the right */
+  margin-top: 20px; /* Adjust top margin */
+}
+
 
 button:hover {
   background-color: #ff007f;
@@ -97,5 +115,32 @@ button[onclick="handleSendPhoneOTP"]:not([style="display: none;"]) + input[type=
 @media (max-width: 600px) {
   .App {
     padding: 10px;
+    flex-direction: column; /* Change to portrait layout on smaller screens */
+    align-items: center; /* Center form vertically */
   }
 }
+/* App.css */
+/* ... (previous styles) */
+
+/* Additional styles for the Submit button */
+.submit-button-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-top: 20px; /* Add some margin to separate it from the other elements */
+}
+
+.submit-button-container button {
+  background-color: #ff2c84;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button-container button:hover {
+  background-color: #ff007f;
+}
+
+/* ... (previous styles) */
